@@ -342,7 +342,7 @@ export const TeamSpotlight: React.FC<TeamSpotlightProps> = ({
               to="/about#team"
               className="inline-flex items-center gap-2 text-xs font-bold text-[#2468A6] hover:text-[#123B68] transition-colors"
             >
-              <span>Explore complete staff organizational directory & internships</span>
+              <span>Explore complete staff organizational directory</span>
               <ExternalLink className="w-3.5 h-3.5" />
             </Link>
           </div>

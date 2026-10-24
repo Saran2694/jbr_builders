@@ -25,7 +25,7 @@ import {
   Headphones,
   HardHat,
 } from 'lucide-react';
-import { EMPLOYEES, INTERNS, INTERNSHIP_PROGRAM } from '../data/team';
+import { EMPLOYEES } from '../data/team';
 import { COMPANY_INFO } from '../data/company';
 import { GALLERY_PROJECTS } from '../data/projects';
 import { Link } from 'react-router-dom';
@@ -47,7 +47,6 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenProjectImage, onOpen
   const { team: cmsEmployees, company: cmsCompany } = useCMS();
   const currentCompany = cmsCompany || COMPANY_INFO;
 
-  const [activeTab, setActiveTab] = useState<'employees' | 'interns'>('employees');
   const [selectedDept, setSelectedDept] = useState<string>('all');
 
   // Only display active / published employees on public About Us page
@@ -85,13 +84,6 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenProjectImage, onOpen
       videoRef.current.muted = !isMuted;
       setIsMuted(!isMuted);
     }
-  };
-
-  const handleApplyInternship = () => {
-    const text = encodeURIComponent(
-      `Hello JBR Builders,\nI am a Civil Engineering / Architecture student interested in applying for your practical site Internship Program.\n\nName:\nCollege:\nDegree & Year of Study:\nPreferred Duration (1/3/6 Months):\nCity / Location:`
-    );
-    window.open(`https://wa.me/${currentCompany.whatsappNumber}?text=${text}`, '_blank');
   };
 
   return (
@@ -544,7 +536,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenProjectImage, onOpen
           </div>
         </div>
 
-        {/* TEAM & INTERNS SECTION (CRITICAL USER REQUIREMENT) */}
+        {/* TEAM SECTION */}
         <div id="team" className="mb-24">
           {/* Section Header */}
           <div className="max-w-3xl mx-auto text-center mb-10">
@@ -553,66 +545,34 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenProjectImage, onOpen
               <span>Our Organization</span>
             </div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#123B68] tracking-tight">
-              Meet Our Engineers & Intern Trainees
+              Meet Our Engineering & Leadership Team
             </h2>
             <p className="mt-3 text-sm sm:text-base text-[#64748B] max-w-2xl mx-auto">
-              A transparent breakdown of our leadership, core on-site staff, and our active internship training cohorts.
+              A transparent breakdown of our registered architects, licensed civil engineers, and experienced site supervisors.
             </p>
           </div>
 
           {/* Reference-Inspired Leadership Spotlight Component */}
           <TeamSpotlight showAllInitially={false} className="py-4 mb-16 rounded-3xl border border-slate-200/50 shadow-sm" />
 
-          {/* Toggle Pills: Employees vs Interns */}
-          <div className="flex justify-center mb-10">
-            <div className="p-1.5 rounded-full glass-panel border border-white/90 shadow-sm flex items-center gap-2">
-              <button
-                type="button"
-                onClick={() => setActiveTab('employees')}
-                className={`flex items-center gap-2 px-6 py-2.5 rounded-full text-xs sm:text-sm font-extrabold transition-all duration-300 cursor-pointer ${
-                  activeTab === 'employees'
-                    ? 'bg-gradient-to-r from-[#123B68] to-[#2468A6] text-white shadow-md'
-                    : 'text-[#64748B] hover:text-[#123B68]'
-                }`}
-              >
-                <Briefcase className="w-4 h-4" />
-                <span>Core Staff & Employees ({EMPLOYEES.length})</span>
-              </button>
-
-              <button
-                type="button"
-                onClick={() => setActiveTab('interns')}
-                className={`flex items-center gap-2 px-6 py-2.5 rounded-full text-xs sm:text-sm font-extrabold transition-all duration-300 cursor-pointer ${
-                  activeTab === 'interns'
-                    ? 'bg-gradient-to-r from-[#123B68] to-[#2468A6] text-white shadow-md'
-                    : 'text-[#64748B] hover:text-[#123B68]'
-                }`}
-              >
-                <GraduationCap className="w-4 h-4" />
-                <span>Interns & Trainees ({INTERNS.length})</span>
-              </button>
+          {/* EMPLOYEES DETAILS */}
+          <div className="space-y-8 animate-in fade-in duration-300">
+            {/* Department Filter Pills */}
+            <div className="flex flex-wrap items-center justify-center gap-2">
+              {departments.map((dept) => (
+                <button
+                  key={dept}
+                  onClick={() => setSelectedDept(dept)}
+                  className={`px-3.5 py-1.5 rounded-full text-xs font-bold transition-all ${
+                    selectedDept === dept
+                      ? 'bg-[#123B68] text-white shadow-xs'
+                      : 'bg-white/80 text-[#64748B] hover:bg-white border border-slate-200/60'
+                  }`}
+                >
+                  {dept === 'all' ? 'All Roles' : dept}
+                </button>
+              ))}
             </div>
-          </div>
-
-          {/* TAB 1: EMPLOYEES DETAILS */}
-          {activeTab === 'employees' && (
-            <div className="space-y-8 animate-in fade-in duration-300">
-              {/* Department Filter Pills */}
-              <div className="flex flex-wrap items-center justify-center gap-2">
-                {departments.map((dept) => (
-                  <button
-                    key={dept}
-                    onClick={() => setSelectedDept(dept)}
-                    className={`px-3.5 py-1.5 rounded-full text-xs font-bold transition-all ${
-                      selectedDept === dept
-                        ? 'bg-[#123B68] text-white shadow-xs'
-                        : 'bg-white/80 text-[#64748B] hover:bg-white border border-slate-200/60'
-                    }`}
-                  >
-                    {dept === 'all' ? 'All Roles' : dept}
-                  </button>
-                ))}
-              </div>
 
               {/* Employees Grid */}
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
@@ -728,145 +688,6 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenProjectImage, onOpen
                 ))}
               </div>
             </div>
-          )}
-
-          {/* TAB 2: INTERNS DETAILS & PROGRAM */}
-          {activeTab === 'interns' && (
-            <div className="space-y-12 animate-in fade-in duration-300">
-              {/* Program Overview Banner */}
-              <div className="glass-panel rounded-3xl p-8 sm:p-10 relative overflow-hidden">
-                <div className="max-w-3xl space-y-4">
-                  <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-cyan-50 border border-cyan-200 text-cyan-900 text-xs font-extrabold uppercase tracking-widest">
-                    <Sparkles className="w-3.5 h-3.5 text-cyan-600" />
-                    <span>Academic & Industry Collaboration</span>
-                  </div>
-
-                  <h3 className="text-2xl sm:text-3xl font-extrabold text-[#123B68] tracking-tight">
-                    {INTERNSHIP_PROGRAM.title}
-                  </h3>
-
-                  <p className="text-sm text-[#64748B] leading-relaxed">
-                    {INTERNSHIP_PROGRAM.description}
-                  </p>
-
-                  {/* Program Pillars */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-4">
-                    {INTERNSHIP_PROGRAM.modules.map((mod, i) => (
-                      <div key={i} className="p-4 rounded-2xl bg-white/70 backdrop-blur-md border border-white/80 shadow-2xs">
-                        <span className="w-6 h-6 rounded-lg bg-[#2468A6]/10 text-[#2468A6] flex items-center justify-center font-bold text-xs mb-2">
-                          0{i + 1}
-                        </span>
-                        <h4 className="text-xs font-extrabold text-[#123B68]">{mod.title}</h4>
-                        <p className="text-[11px] text-[#64748B] mt-1 leading-snug">{mod.desc}</p>
-                      </div>
-                    ))}
-                  </div>
-
-                  <div className="pt-4 flex flex-wrap items-center gap-3">
-                    <button
-                      type="button"
-                      onClick={handleApplyInternship}
-                      className="inline-flex items-center gap-2 px-6 py-3 rounded-2xl bg-gradient-to-r from-[#123B68] to-[#2468A6] hover:from-[#0E2E52] hover:to-[#1E588D] text-white font-bold text-xs sm:text-sm shadow-[0_6px_20px_rgba(36,104,166,0.35)] transition-all hover:scale-102"
-                    >
-                      <MessageCircle className="w-4 h-4" />
-                      <span>Apply for Civil Engineering Internship</span>
-                    </button>
-                    <span className="text-xs text-[#64748B]">Open for 2026 batches (Tuticorin & Tirunelveli sites)</span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Active & Recent Interns Cards */}
-              <div>
-                <h4 className="text-xl font-extrabold text-[#123B68] mb-6 flex items-center gap-2">
-                  <GraduationCap className="w-5 h-5 text-[#2468A6]" />
-                  <span>Current & Recent Intern Trainee Cohort</span>
-                </h4>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
-                  {INTERNS.map((intern) => (
-                    <div
-                      key={intern.id}
-                      className="glass-panel glass-panel-hover rounded-3xl p-7 flex flex-col justify-between group relative"
-                    >
-                      <div>
-                        {/* Header with Circular Avatar */}
-                        <div className="flex items-start justify-between gap-4 mb-4">
-                          <div className="flex items-center gap-3.5">
-                            <div className="w-16 h-16 sm:w-18 sm:h-18 rounded-full overflow-hidden border-2 border-white shadow-md shrink-0 bg-slate-100 group-hover:scale-105 transition-transform duration-500">
-                              <img
-                                src={intern.image}
-                                alt={intern.name}
-                                className="w-full h-full object-cover object-top"
-                                loading="lazy"
-                              />
-                            </div>
-                            <div>
-                              <span className="inline-block px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase tracking-widest bg-[#2468A6]/10 text-[#2468A6] mb-1">
-                                {intern.degree}
-                              </span>
-                              <h5 className="text-base sm:text-lg font-extrabold text-[#123B68]">
-                                {intern.name}
-                              </h5>
-                              <p className="text-xs text-[#64748B] font-medium">
-                                {intern.institution}
-                              </p>
-                            </div>
-                          </div>
-
-                          <span
-                            className={`px-3 py-1 rounded-full text-[10px] font-extrabold uppercase tracking-widest shrink-0 ${
-                              intern.status === 'Active Intern'
-                                ? 'bg-[#EBF4FC] text-[#123B68] border border-blue-200'
-                                : intern.status === 'PPO Offered'
-                                ? 'bg-[#123B68] text-white border border-[#2468A6]'
-                                : 'bg-slate-100 text-[#1E293B] border border-slate-200'
-                            }`}
-                          >
-                            {intern.status}
-                          </span>
-                        </div>
-
-                        {/* Mentor and Duration details */}
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 p-3 rounded-2xl bg-white/70 border border-slate-200/60 text-xs mb-4">
-                          <div>
-                            <span className="block text-[10px] font-bold text-[#64748B] uppercase">Assigned Mentor</span>
-                            <span className="font-extrabold text-[#123B68]">{intern.mentor}</span>
-                          </div>
-                          <div>
-                            <span className="block text-[10px] font-bold text-[#64748B] uppercase">Duration</span>
-                            <span className="font-extrabold text-[#123B68]">{intern.duration}</span>
-                          </div>
-                        </div>
-
-                        <div className="mb-4">
-                          <span className="text-[11px] font-extrabold text-[#2468A6] uppercase tracking-wider block mb-1">
-                            Focus Area:
-                          </span>
-                          <p className="text-xs font-semibold text-[#1E293B]">
-                            {intern.focusArea}
-                          </p>
-                        </div>
-
-                        {/* Learning highlights */}
-                        <div className="space-y-2 pt-3 border-t border-slate-200/60">
-                          <p className="text-[11px] font-extrabold uppercase tracking-wider text-[#123B68]">
-                            Hands-On Practical Contributions:
-                          </p>
-                          {(intern.learningHighlights || []).map((hl, idx) => (
-                            <div key={idx} className="flex items-start gap-2 text-xs text-[#64748B]">
-                              <CheckCircle2 className="w-3.5 h-3.5 text-[#2468A6] mt-0.5 shrink-0" />
-                              <span>{hl}</span>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          )}
         </div>
 
         {/* Bottom CTA Banner */}

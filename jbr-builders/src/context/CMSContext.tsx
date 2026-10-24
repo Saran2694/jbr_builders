@@ -134,9 +134,8 @@ const defaultInterns: InternMemberCMS[] = INTERNS.map((i, idx) => ({
 
 const defaultInternshipProgram: InternshipProgramCMS = {
   ...INTERNSHIP_PROGRAM,
-  defaultWhatsappTemplate:
-    'Hello JBR Builders,\nI am a Civil Engineering / Architecture student interested in applying for your practical site Internship Program.\n\nName:\nCollege:\nDegree & Year of Study:\nPreferred Duration (1/3/6 Months):\nCity / Location:',
-  published: true,
+  defaultWhatsappTemplate: '',
+  published: false,
   updatedAt: new Date().toISOString(),
 };
 
