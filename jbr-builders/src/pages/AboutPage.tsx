@@ -633,16 +633,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenProjectImage, onOpen
                               loading="lazy"
                             />
                           </div>
-                          {emp.isLeadership && (
-                            <span className="absolute -bottom-1 -right-1 px-2 py-0.5 rounded-full bg-[#123B68] text-white text-[9px] font-bold uppercase tracking-wider border border-white shadow-xs">
-                              Lead
-                            </span>
-                          )}
                         </div>
-
-                        <span className="px-3 py-1 rounded-full text-[10px] font-extrabold uppercase tracking-widest bg-[#EBF4FC] text-[#123B68] border border-[#2468A6]/30">
-                          {emp.experience}
-                        </span>
                       </div>
 
                       <h3 className="text-xl font-extrabold text-[#123B68] group-hover:text-[#2468A6] transition-colors">
