@@ -357,7 +357,7 @@ function getInitialSeedData(): DatabaseSchema {
   const team: TeamMemberCMS[] = [
     {
       id: 'emp-1',
-      name: 'Manoj Neerajakshalu',
+      name: 'J Bharath',
       role: 'Founder & Principal Architect',
       department: 'Executive Leadership & Engineering',
       qualification: 'B.Arch, B.E. Civil, Council of Architecture Reg.',

@@ -32,7 +32,7 @@ export const TeamSpotlight: React.FC<TeamSpotlightProps> = ({
   // Filter published members
   const publishedTeam = sourceTeam.filter((m) => (m as any).published !== false);
 
-  // Active selected member index (default to 0: Manoj Neerajakshalu, Principal Architect)
+  // Active selected member index (default to 0:  J Bharath, Principal Architect)
   const [activeIdx, setActiveIdx] = useState(0);
 
   const activeMember = publishedTeam[activeIdx] || publishedTeam[0];

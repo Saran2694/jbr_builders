@@ -297,7 +297,7 @@
   "team": [
     {
       "id": "emp-1",
-      "name": "Manoj Neerajakshalu",
+      "name": "J Bharath",
       "role": "Founder & Principal Architect",
       "department": "Executive Leadership & Engineering",
       "qualification": "B.Arch, B.E. Civil, Council of Architecture Reg.",
@@ -554,7 +554,7 @@
       "entityId": "emp-1",
       "timestamp": "2026-10-19T09:29:46.700Z",
       "user": "admin",
-      "details": "Updated Manoj Neerajakshalu"
+      "details": "Updated  J Bharath"
     },
     {
       "id": "log-1792402114311-f16736",
@@ -563,7 +563,7 @@
       "entityId": "emp-1",
       "timestamp": "2026-10-19T09:28:34.311Z",
       "user": "admin",
-      "details": "Updated Manoj Neerajakshalu"
+      "details": "Updated  J Bharath"
     },
     {
       "id": "log-1792402091261-4fd996",
@@ -572,7 +572,7 @@
       "entityId": "emp-1",
       "timestamp": "2026-10-19T09:28:11.261Z",
       "user": "admin",
-      "details": "Updated Manoj Neerajakshalu"
+      "details": "Updated  J Bharath"
     },
     {
       "id": "log-1792402080684-66d761",
