@@ -1,0 +1,48 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Helper function to check if user is an authenticated administrator
+    function isAdmin() {
+      return request.auth != null;
+    }
+
+    // siteContent collection (About Us, Company settings, Homepage configuration)
+    match /siteContent/{document} {
+      // Public users can read all site content
+      allow read: if true;
+      // Only authenticated administrators can modify site content
+      allow write: if isAdmin();
+    }
+
+    // employees collection
+    match /employees/{employeeId} {
+      // Public users can read active/published employees only
+      allow read: if resource.data.published == true || isAdmin();
+      // Only authenticated administrators can create, update, or delete employee records
+      allow write: if isAdmin();
+    }
+
+    // gallery collection
+    match /gallery/{galleryId} {
+      // Public users can read published gallery items only
+      allow read: if resource.data.published == true || isAdmin();
+      // Only authenticated administrators can create, update, or delete gallery items
+      allow write: if isAdmin();
+    }
+
+    // projects collection
+    match /projects/{projectId} {
+      // Public users can read published projects only
+      allow read: if resource.data.published == true || isAdmin();
+      // Only authenticated administrators can create, update, or delete projects
+      allow write: if isAdmin();
+    }
+
+    // Deny all other collections by default for safety
+    match /{document=**} {
+      allow read, write: if isAdmin();
+    }
+  }
+}

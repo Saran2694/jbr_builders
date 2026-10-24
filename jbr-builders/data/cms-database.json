@@ -1,0 +1,707 @@
+{
+  "version": 1,
+  "users": [
+    {
+      "id": "admin-super-1",
+      "username": "admin",
+      "email": "admin@jbrbuilders.in",
+      "passwordHash": "04fe1c6653093a29453d647ef1035f17841dbaeb12f62e90eda4120d5f08dde22787f5cab892a880e2f15ce5f5748a82ffec11dc666689873a71af8ff98b8cf5",
+      "salt": "b31d8247389003b60ace2d583674ad2b",
+      "role": "superadmin",
+      "createdAt": "2026-10-19T09:21:33.641Z",
+      "lastLogin": "2026-10-24T06:34:59.867Z"
+    }
+  ],
+  "company": {
+    "name": "JBR Builders",
+    "tagline": "LISTEN BETTER - PLAN BETTER - BUILD BETTER",
+    "heroHeadline": "Building Your Vision. Creating Your Future.",
+    "heroSubtext": "Quality construction, thoughtful planning, and reliable building solutions tailored to your needs.",
+    "phone": "+91 97917 10655",
+    "phoneRaw": "+919791710655",
+    "whatsappNumber": "919791710655",
+    "whatsappUrl": "https://wa.me/919791710655?text=Hello%20JBR%20Builders%2C%20I%20would%20like%20to%20inquire%20about%20your%20construction%20services.",
+    "defaultWhatsappMessage": "Hello JBR Builders, I would like to inquire about your construction services.",
+    "email": "jbrbuilders15@gmail.com",
+    "offices": [
+      {
+        "id": "tuticorin-head-office",
+        "type": "Head Office",
+        "address": "4/89/9, Palai Main Road, Pudukottai, Tuticorin, Tamil Nadu.",
+        "city": "Tuticorin",
+        "state": "Tamil Nadu",
+        "pincode": "628103",
+        "mapsUrl": "https://maps.google.com/?q=Pudukottai+Tuticorin",
+        "isPrimary": true
+      },
+      {
+        "id": "tirunelveli-branch-office",
+        "type": "Branch Office",
+        "address": "7/9, Pearl Avenue, K.T.C. Nagar, Tirunelveli, Tamil Nadu.",
+        "city": "Tirunelveli",
+        "state": "Tamil Nadu",
+        "pincode": "627011",
+        "mapsUrl": "https://maps.google.com/?q=KTC+Nagar+Tirunelveli",
+        "isPrimary": false
+      }
+    ],
+    "workingHours": "Monday - Saturday: 9:00 AM - 7:00 PM",
+    "logoUrl": "/images/jbr-logo.jpg",
+    "socialLinks": {
+      "linkedin": "https://linkedin.com",
+      "facebook": "https://facebook.com",
+      "instagram": "https://instagram.com"
+    },
+    "updatedAt": "2026-10-19T09:21:33.641Z"
+  },
+  "services": [
+    {
+      "id": "residential-construction",
+      "title": "Residential Construction",
+      "description": "Custom individual homes, villas, and residential developments engineered with durable materials, structural precision, and modern living aesthetics.",
+      "iconName": "Home",
+      "features": [
+        "Custom floor plans & structural execution",
+        "Foundation to roof finishing",
+        "High-grade masonry & reinforced concrete",
+        "Timely milestone completions"
+      ],
+      "displayOrder": 1,
+      "published": true,
+      "quoteSubject": "Residential Construction",
+      "createdAt": "2026-10-19T09:21:33.641Z",
+      "updatedAt": "2026-10-19T09:21:33.641Z"
+    },
+    {
+      "id": "commercial-construction",
+      "title": "Commercial Construction",
+      "description": "Functional and robust commercial spaces, office premises, retail showrooms, and business structures built to meet commercial building codes.",
+      "iconName": "Building2",
+      "features": [
+        "Office buildings & business spaces",
+        "Structural engineering compliance",
+        "Modern utility & infrastructure integration",
+        "High-traffic durability specifications"
+      ],
+      "displayOrder": 2,
+      "published": true,
+      "quoteSubject": "Commercial Construction",
+      "createdAt": "2026-10-19T09:21:33.641Z",
+      "updatedAt": "2026-10-19T09:21:33.641Z"
+    },
+    {
+      "id": "building-planning-design",
+      "title": "Building Planning & Design",
+      "description": "Architectural layouts, functional space planning, structural drawings, and elevation design aligned with municipal guidelines and practical utility.",
+      "iconName": "Compass",
+      "features": [
+        "2D floor layouts & architectural plans",
+        "3D elevation perspectives",
+        "Structural calculation & civil planning",
+        "Optimal ventilation & natural lighting"
+      ],
+      "displayOrder": 3,
+      "published": true,
+      "quoteSubject": "Building Planning & Design",
+      "createdAt": "2026-10-19T09:21:33.641Z",
+      "updatedAt": "2026-10-19T09:21:33.641Z"
+    },
+    {
+      "id": "renovation-remodeling",
+      "title": "Renovation & Remodeling",
+      "description": "Upgrading existing structures, structural repairs, exterior face-lifts, interior layout reconfigurations, and modern aesthetic enhancements.",
+      "iconName": "Wrench",
+      "features": [
+        "Interior spatial reconfiguration",
+        "Facade & elevation modernization",
+        "Wall finishing, tiling & structural repair",
+        "False ceiling & lighting upgrades"
+      ],
+      "displayOrder": 4,
+      "published": true,
+      "quoteSubject": "Renovation & Remodeling",
+      "createdAt": "2026-10-19T09:21:33.641Z",
+      "updatedAt": "2026-10-19T09:21:33.641Z"
+    },
+    {
+      "id": "project-management",
+      "title": "Project Management",
+      "description": "End-to-end site coordination, quality audits, material procurement scheduling, and rigorous timeline supervision on site.",
+      "iconName": "ClipboardCheck",
+      "features": [
+        "On-site civil supervisor oversight",
+        "Strict material quality verification",
+        "Stage-by-stage progress reporting",
+        "Transparent timeline tracking"
+      ],
+      "displayOrder": 5,
+      "published": true,
+      "quoteSubject": "Project Management",
+      "createdAt": "2026-10-19T09:21:33.641Z",
+      "updatedAt": "2026-10-19T09:21:33.641Z"
+    },
+    {
+      "id": "turnkey-solutions",
+      "title": "Turnkey Construction Solutions",
+      "description": "Comprehensive end-to-end building services from conceptual blueprints, material supply, and civil execution to complete key handover.",
+      "iconName": "KeyRound",
+      "features": [
+        "Single-point accountability",
+        "Material procurement & civil engineering",
+        "Plumbing, electrical & finishing works",
+        "Ready-to-move-in key delivery"
+      ],
+      "displayOrder": 6,
+      "published": true,
+      "quoteSubject": "Turnkey Construction Solutions",
+      "createdAt": "2026-10-19T09:21:33.641Z",
+      "updatedAt": "2026-10-19T09:21:33.641Z"
+    }
+  ],
+  "projects": [
+    {
+      "id": "residential-elevation",
+      "title": "Modern Residential Elevation & Architectural Lighting",
+      "category": "Residential Architecture",
+      "categoryTag": "exterior",
+      "imageSrc": "/images/project-residential-elevation.jpg",
+      "additionalImages": [],
+      "aspectRatio": "portrait",
+      "description": "Architectural night view of a completed multi-storey residence highlighting facade lighting, decorative balcony, stone cladding, and welcoming entrance arch.",
+      "location": "Tuticorin",
+      "year": "2025",
+      "displayOrder": 1,
+      "published": true,
+      "isFeatured": true,
+      "createdAt": "2026-10-19T09:21:33.641Z",
+      "updatedAt": "2026-10-19T09:21:33.642Z"
+    },
+    {
+      "id": "key-handover",
+      "title": "Completed Residence Key Handover Ceremony",
+      "category": "Project Handover",
+      "categoryTag": "handover",
+      "imageSrc": "/images/project-key-handover.jpg",
+      "additionalImages": [],
+      "aspectRatio": "landscape",
+      "description": "Traditional housewarming and ceremonial key handover celebration marking the successful completion of a residential building with the client family.",
+      "location": "Tirunelveli",
+      "year": "2025",
+      "displayOrder": 2,
+      "published": true,
+      "isFeatured": true,
+      "createdAt": "2026-10-19T09:21:33.642Z",
+      "updatedAt": "2026-10-19T09:21:33.642Z"
+    },
+    {
+      "id": "office-front",
+      "title": "JBR Builders Office Entrance & Consultation Space",
+      "category": "Corporate & Office",
+      "categoryTag": "office",
+      "imageSrc": "/images/office-entrance.jpg",
+      "additionalImages": [],
+      "aspectRatio": "landscape",
+      "description": "Office entrance with custom glass doors and official JBR Builders branding, serving clients for planning, consultation, and project coordination.",
+      "location": "Tuticorin",
+      "year": "2024",
+      "displayOrder": 3,
+      "published": true,
+      "isFeatured": false,
+      "createdAt": "2026-10-19T09:21:33.642Z",
+      "updatedAt": "2026-10-19T09:21:33.642Z"
+    },
+    {
+      "id": "interior-ceiling",
+      "title": "Artistic Sky & Cloud False Ceiling Finishing",
+      "category": "Interior Finishes",
+      "categoryTag": "interior",
+      "imageSrc": "/images/interior-ceiling-design.jpg",
+      "additionalImages": [],
+      "aspectRatio": "portrait",
+      "description": "Specialized interior false ceiling execution featuring custom sky-and-cloud artistic detailing paired with modern recessed and ambient lighting.",
+      "location": "Tuticorin",
+      "year": "2025",
+      "displayOrder": 4,
+      "published": true,
+      "isFeatured": true,
+      "createdAt": "2026-10-19T09:21:33.642Z",
+      "updatedAt": "2026-10-19T09:21:33.642Z"
+    }
+  ],
+  "gallery": [
+    {
+      "id": "gallery-1",
+      "title": "Modern Residential Elevation & Architectural Lighting",
+      "category": "Residential Architecture",
+      "categoryTag": "exterior",
+      "imageSrc": "/images/project-residential-elevation.jpg",
+      "isExternal": false,
+      "altText": "Modern residential elevation in Tuticorin with facade lighting",
+      "caption": "Exterior night elevation featuring balcony stone cladding and ambient lighting.",
+      "aspectRatio": "portrait",
+      "isFeatured": true,
+      "published": true,
+      "displayOrder": 1,
+      "createdAt": "2026-10-19T09:21:33.642Z",
+      "updatedAt": "2026-10-19T09:21:33.642Z"
+    },
+    {
+      "id": "gallery-2",
+      "title": "Completed Residence Key Handover Ceremony",
+      "category": "Project Handover",
+      "categoryTag": "handover",
+      "imageSrc": "/images/project-key-handover.jpg",
+      "isExternal": false,
+      "altText": "Ceremonial key handover to happy homeowners",
+      "caption": "Housewarming ceremony celebrating milestone completion.",
+      "aspectRatio": "landscape",
+      "isFeatured": true,
+      "published": true,
+      "displayOrder": 2,
+      "createdAt": "2026-10-19T09:21:33.642Z",
+      "updatedAt": "2026-10-19T09:21:33.642Z"
+    },
+    {
+      "id": "gallery-3",
+      "title": "JBR Builders Office Entrance & Consultation Space",
+      "category": "Corporate & Office",
+      "categoryTag": "office",
+      "imageSrc": "/images/office-entrance.jpg",
+      "isExternal": false,
+      "altText": "JBR Builders official headquarters entrance",
+      "caption": "Consultation and civil planning front office in Tuticorin.",
+      "aspectRatio": "landscape",
+      "isFeatured": false,
+      "published": true,
+      "displayOrder": 3,
+      "createdAt": "2026-10-19T09:21:33.642Z",
+      "updatedAt": "2026-10-19T09:21:33.642Z"
+    },
+    {
+      "id": "gallery-4",
+      "title": "Artistic Sky & Cloud False Ceiling Finishing",
+      "category": "Interior Finishes",
+      "categoryTag": "interior",
+      "imageSrc": "/images/interior-ceiling-design.jpg",
+      "isExternal": false,
+      "altText": "Custom cloud and sky ceiling finish with lighting",
+      "caption": "Bespoke ambient false ceiling execution for living lounge.",
+      "aspectRatio": "portrait",
+      "isFeatured": true,
+      "published": true,
+      "displayOrder": 4,
+      "createdAt": "2026-10-19T09:21:33.642Z",
+      "updatedAt": "2026-10-19T09:21:33.642Z"
+    }
+  ],
+  "team": [
+    {
+      "id": "emp-1",
+      "name": "Manoj Neerajakshalu",
+      "role": "Founder & Principal Architect",
+      "department": "Executive Leadership & Engineering",
+      "qualification": "B.Arch, B.E. Civil, Council of Architecture Reg.",
+      "experience": "16+ Years Experience",
+      "location": "Headquarters: Tuticorin",
+      "specialization": "Architectural Master Planning, Structural Integrity & Turnkey Execution",
+      "bio": "Founder and visionary architect driving JBR Builders with relentless focus on design excellence and construction rigor. Spearheads large-scale residential and commercial landmarks across South Tamil Nadu.",
+      "responsibilities": [
+        "Master architectural conceptualization & structural approvals",
+        "Client architectural consultation & high-value contract finalization",
+        "Quality assurance oversight across all active sites in Tuticorin & Tirunelveli"
+      ],
+      "keyProjects": [
+        "Multi-Storey Residential Elevations in Tuticorin",
+        "Commercial Complex & Showrooms in Tirunelveli",
+        "Luxury Independent Turnkey Villas"
+      ],
+      "image": "/images/team/founder.jpeg",
+      "quote": "Bringing architectural dreams into reality through a lot of passion and dedication.",
+      "isLeadership": true,
+      "featuredInSpotlight": true,
+      "published": true,
+      "displayOrder": 1,
+      "socials": {
+        "linkedin": "https://linkedin.com",
+        "email": "manoj@jbrbuilders.in",
+        "phone": "+919791710655"
+      },
+      "createdAt": "2026-10-19T09:21:33.642Z",
+      "updatedAt": "2026-10-24T10:30:00.000Z"
+    },
+    {
+      "id": "emp-2",
+      "name": "Karthick",
+      "role": "Civil Engineer",
+      "department": "Civil Engineering & Site Operations",
+      "qualification": "B.E. Civil Engineering",
+      "experience": "12+ Years Experience",
+      "location": "Tuticorin & Tirunelveli",
+      "specialization": "RCC Detailing, Concrete Quality Assurance & Structural Execution",
+      "bio": "Experienced Civil Engineer overseeing structural design integrity, foundation concrete testing, and on-site engineering operations for high-durability residential and commercial construction.",
+      "responsibilities": [
+        "Structural engineering analysis conforming to Indian Standard Codes",
+        "Foundation depth engineering and concrete grade validation on site",
+        "Technical site audits and reinforcement rebar verification"
+      ],
+      "keyProjects": [
+        "Multi-Storey Duplex Residential Frameworks",
+        "Commercial Complex Heavy Span Beams",
+        "Turnkey Residential Villa Handover Projects"
+      ],
+      "image": "/images/team/engnier.jpeg",
+      "quote": "Engineering precision and steadfast structural safety are the bedrock of every landmark we build.",
+      "isLeadership": true,
+      "featuredInSpotlight": true,
+      "published": true,
+      "displayOrder": 2,
+      "socials": {
+        "linkedin": "https://linkedin.com",
+        "email": "karthick@jbrbuilders.in",
+        "phone": "+919791710655"
+      },
+      "createdAt": "2026-10-19T09:21:33.642Z",
+      "updatedAt": "2026-10-24T10:30:00.000Z"
+    },
+    {
+      "id": "emp-3",
+      "name": "V Nattar muthuraj",
+      "role": "Architect",
+      "department": "Architecture & Spatial Planning",
+      "qualification": "B.Arch, Council of Architecture Reg.",
+      "experience": "10+ Years Experience",
+      "location": "Design Studio: Tuticorin",
+      "specialization": "Contemporary Elevations, 3D Spatial Planning & Facade Engineering",
+      "bio": "Creative Architect leading contemporary elevation blueprints, climate-responsive envelope modeling, and client 3D walkthrough visualizations with signature spatial harmony.",
+      "responsibilities": [
+        "Architectural elevation design and facade lighting integration",
+        "Detailed floor plan drafting and local municipal approval compliance",
+        "On-site design consistency audits during finishing stages"
+      ],
+      "keyProjects": [
+        "Modern Elevation Villa Showcase in Tuticorin",
+        "Contemporary Duplex Residences",
+        "Architectural Consultation Studio"
+      ],
+      "image": "/images/team/arcitectmuthu.jpeg",
+      "quote": "Every elevation must tell a unique story while honoring natural daylight, ventilation, and structural harmony.",
+      "isLeadership": true,
+      "featuredInSpotlight": true,
+      "published": true,
+      "displayOrder": 3,
+      "socials": {
+        "linkedin": "https://linkedin.com",
+        "email": "muthuraj@jbrbuilders.in",
+        "phone": "+919791710655"
+      },
+      "createdAt": "2026-10-19T09:21:33.642Z",
+      "updatedAt": "2026-10-24T10:30:00.000Z"
+    },
+    {
+      "id": "emp-4",
+      "name": "J Rajapandi",
+      "role": "Site Supervisor",
+      "department": "Civil Engineering & Site Operations",
+      "qualification": "DCE, Senior Site Supervisor",
+      "experience": "14+ Years Site Experience",
+      "location": "Tuticorin Project Sites",
+      "specialization": "Ground Execution, Masonry & Bar Bending Supervision, Safety Protocols",
+      "bio": "Direct ground commander ensuring building blueprints are executed millimeter-accurate on site with strict adherence to safety protocols and concrete curing schedules.",
+      "responsibilities": [
+        "Daily site supervision of masonry, shuttering, and bar bending work",
+        "Vendor material delivery checks against grade specifications",
+        "Ensuring zero-compromise execution at every construction milestone"
+      ],
+      "keyProjects": [
+        "Residential Villa Turnkey Ground Construction",
+        "Compound Wall & Foundation Pile Projects",
+        "Key Handover Residence Milestones"
+      ],
+      "image": "/images/team/sitesuperviser.jpeg",
+      "quote": "True architectural quality is forged through daily vigilance and disciplined on-site craftsmanship.",
+      "isLeadership": false,
+      "featuredInSpotlight": true,
+      "published": true,
+      "displayOrder": 4,
+      "socials": {
+        "linkedin": "https://linkedin.com",
+        "email": "rajapandi@jbrbuilders.in",
+        "phone": "+919791710655"
+      },
+      "createdAt": "2026-10-19T09:21:33.642Z",
+      "updatedAt": "2026-10-24T10:30:00.000Z"
+    }
+  ],
+  "interns": [
+    {
+      "id": "intern-1",
+      "name": "S. Harish Kumar",
+      "role": "Graduate Civil Engineering Intern",
+      "institution": "Government College of Engineering, Tirunelveli",
+      "degree": "B.E. Civil Engineering (Final Year)",
+      "duration": "6 Months (Jan 2026 - Jun 2026)",
+      "mentor": "Karthick (Civil Engineer)",
+      "focusArea": "Site Leveling, Shuttering Verification & Reinforcement Checks",
+      "learningHighlights": [
+        "Conducted on-site slump cone tests for M25 grade concrete on residential slabs",
+        "Verified rebar spacing and lap length against structural detailing drawings",
+        "Assisted senior engineers during client key handover inspection checklists"
+      ],
+      "status": "Active Intern",
+      "image": "/images/team/intern-harish-kumar.jpg",
+      "published": true,
+      "displayOrder": 1,
+      "createdAt": "2026-10-19T09:21:33.642Z",
+      "updatedAt": "2026-10-19T09:21:33.642Z"
+    },
+    {
+      "id": "intern-2",
+      "name": "V. Nivetha",
+      "role": "Architectural Drafting & 3D Modeling Intern",
+      "institution": "Anna University Regional Campus, Tirunelveli",
+      "degree": "B.Arch (4th Year)",
+      "duration": "3 Months (Nov 2025 - Jan 2026)",
+      "mentor": "V Nattar muthuraj (Architect)",
+      "focusArea": "AutoCAD Working Drawings, 3D Elevation Modeling & Material Mapping",
+      "learningHighlights": [
+        "Developed 3D exterior facade renders using modern parametric panels",
+        "Created detailed electrical and plumbing conduit layout blueprints",
+        "Participated in direct client consultation sessions for floor plan personalization"
+      ],
+      "status": "PPO Offered",
+      "image": "/images/team/intern-nivetha.jpg",
+      "published": true,
+      "displayOrder": 2,
+      "createdAt": "2026-10-19T09:21:33.642Z",
+      "updatedAt": "2026-10-19T09:21:33.642Z"
+    },
+    {
+      "id": "intern-3",
+      "name": "A. Mohammed Farooq",
+      "role": "Civil Site Trainee",
+      "institution": "National Engineering College (NEC), Kovilpatti",
+      "degree": "B.E. Civil Engineering",
+      "duration": "3 Months (Feb 2026 - Apr 2026)",
+      "mentor": "Karthick (Civil Engineer)",
+      "focusArea": "Total Station Survey, Excavation Monitoring & Quality Control",
+      "learningHighlights": [
+        "Hands-on experience with Total Station equipment for boundary demarcations",
+        "Daily site dairy logging and progress documentation in Tuticorin projects",
+        "Studied soil test reports for pile foundation depth calculations"
+      ],
+      "status": "Active Intern",
+      "image": "/images/team/intern-farooq.jpg",
+      "published": true,
+      "displayOrder": 3,
+      "createdAt": "2026-10-19T09:21:33.642Z",
+      "updatedAt": "2026-10-19T09:21:33.642Z"
+    },
+    {
+      "id": "intern-4",
+      "name": "R. Kavinraj",
+      "role": "Structural Detailing Intern",
+      "institution": "St. Xavier’s Catholic College of Engineering, Nagercoil",
+      "degree": "B.E. Civil Engineering (2025 Batch)",
+      "duration": "6 Months (Completed Dec 2025)",
+      "mentor": "Manoj Neerajakshalu (Founder-Principal Architect)",
+      "focusArea": "RCC Beam & Column Reinforcement Scheduling",
+      "learningHighlights": [
+        "Prepared bar bending schedules (BBS) for 2 multi-storey residential projects",
+        "Gained deep familiarity with IS 456:2000 and IS 13920 seismic detailing codes",
+        "Successfully transitioned to Junior Project Associate at JBR Builders"
+      ],
+      "status": "Completed",
+      "image": "/images/team/intern-kavinraj.jpg",
+      "published": true,
+      "displayOrder": 4,
+      "createdAt": "2026-10-19T09:21:33.642Z",
+      "updatedAt": "2026-10-19T09:21:33.642Z"
+    }
+  ],
+  "internshipProgram": {
+    "title": "JBR Builders Civil Engineering & Architectural Internship Program",
+    "tagline": "Bridging Academic Theory with Real-World Ground Construction",
+    "description": "We actively nurture the next generation of civil engineers, architects, and structural designers from colleges across Tamil Nadu. Our internships provide genuine hard-hat site exposure, mentor-guided responsibility, and pathways to full-time engineering careers.",
+    "eligibility": [
+      "Students pursuing Diploma / B.E. / B.Tech / M.Tech in Civil Engineering",
+      "Architecture students (B.Arch) seeking practical working drawing & 3D elevation exposure",
+      "Minimum 6.5 CGPA with a genuine passion for on-site structural works"
+    ],
+    "modules": [
+      {
+        "title": "Site Execution & Surveying",
+        "desc": "Hands-on training with Total Station, optical levels, excavation alignment, and foundation marking."
+      },
+      {
+        "title": "Concrete Technology & QA/QC",
+        "desc": "Live testing of concrete slump, cube compressive strength, aggregate testing, and curing verification."
+      },
+      {
+        "title": "Bar Bending & Structural Detailing",
+        "desc": "Understanding structural blueprints, rebar ties, hook angles, lap lengths, and BBS calculation."
+      },
+      {
+        "title": "Estimation & Quantity Surveying",
+        "desc": "Learning material takeoff, rate analysis, labor productivity tracking, and site cost management."
+      }
+    ],
+    "benefits": [
+      "Official Internship Certificate & Performance Letter from JBR Builders",
+      "Direct mentorship from licensed engineers with 10+ years experience",
+      "Pre-Placement Offer (PPO) opportunities for outstanding performers",
+      "Safety gear (Hard-hat, high-vis jacket, tape measures) provided on site"
+    ],
+    "defaultWhatsappTemplate": "Hello JBR Builders,\nI am a Civil Engineering / Architecture student interested in applying for your practical site Internship Program.\n\nName:\nCollege:\nDegree & Year of Study:\nPreferred Duration (1/3/6 Months):\nCity / Location:",
+    "published": true,
+    "updatedAt": "2026-10-19T09:21:33.642Z"
+  },
+  "homepage": {
+    "heroBadge": "LISTEN BETTER • PLAN BETTER • BUILD BETTER",
+    "heroHeadline": "Building Your Vision. Creating Your Future.",
+    "heroSubtext": "Quality construction, thoughtful planning, and reliable building solutions tailored to your needs across Tuticorin & Tirunelveli.",
+    "heroCtaText": "Request Project Consultation",
+    "heroSecondaryCtaText": "Explore Project Portfolio",
+    "stats": [
+      {
+        "id": "stat-1",
+        "value": "16+",
+        "label": "Years Experience",
+        "subtext": "Serving South Tamil Nadu"
+      },
+      {
+        "id": "stat-2",
+        "value": "250+",
+        "label": "Projects Delivered",
+        "subtext": "Residential & Commercial"
+      },
+      {
+        "id": "stat-3",
+        "value": "100%",
+        "label": "Quality Assured",
+        "subtext": "IS Code Compliance"
+      },
+      {
+        "id": "stat-4",
+        "value": "50+",
+        "label": "Master Craftsmen",
+        "subtext": "Engineers & Supervisors"
+      }
+    ],
+    "whyChooseUs": [
+      {
+        "id": "why-1",
+        "title": "Seismic Structural Compliance",
+        "description": "Engineered with licensed RCC frames, high-grade steel, and certified cement mix designs built for longevity.",
+        "icon": "ShieldCheck"
+      },
+      {
+        "id": "why-2",
+        "title": "Transparent Itemized BOQ",
+        "description": "Crystal-clear line-by-line material specifications with zero surprise charges or unverified markups.",
+        "icon": "ClipboardCheck"
+      },
+      {
+        "id": "why-3",
+        "title": "Milestone Timely Handover",
+        "description": "Disciplined stage-by-stage scheduling with digital updates and strict adherence to handover dates.",
+        "icon": "Calendar"
+      },
+      {
+        "id": "why-4",
+        "title": "Single-Point Accountability",
+        "description": "From 3D elevations and municipal permits to interior joinery and key delivery under one roof.",
+        "icon": "KeyRound"
+      }
+    ],
+    "aboutPreview": {
+      "badge": "Company Profile & People",
+      "heading": "Over 16 Years of Civil Engineering Excellence",
+      "description": "At JBR Builders, we believe great architecture begins with deep listening. We translate personal aspirations and business goals into durable physical structures.",
+      "experienceYears": "16+"
+    },
+    "sectionVisibility": {
+      "hero": true,
+      "teamSpotlight": true,
+      "about": true,
+      "services": true,
+      "projects": true,
+      "whyChooseUs": true,
+      "contact": true
+    },
+    "updatedAt": "2026-10-19T09:21:33.642Z"
+  },
+  "auditLogs": [
+    {
+      "id": "log-1792823699892-6697f8",
+      "action": "LOGIN",
+      "entity": "USER",
+      "entityId": "admin-super-1",
+      "timestamp": "2026-10-24T06:34:59.892Z",
+      "user": "admin",
+      "details": "Successful login from ::1"
+    },
+    {
+      "id": "log-1792427644973-c9792d",
+      "action": "UPLOAD_MEDIA",
+      "entity": "MEDIA",
+      "entityId": "upload-1792427644970-d13a8d7e.png",
+      "timestamp": "2026-10-19T16:34:04.974Z",
+      "user": "admin",
+      "details": "Uploaded Datamint Aarvix Hiring Opportunities Poster.png"
+    },
+    {
+      "id": "log-1792427636164-18d844",
+      "action": "UPLOAD_MEDIA",
+      "entity": "MEDIA",
+      "entityId": "upload-1792427636159-30620d60.png",
+      "timestamp": "2026-10-19T16:33:56.164Z",
+      "user": "admin",
+      "details": "Uploaded Coral Geometric Ceiling and Floral Triptych.png"
+    },
+    {
+      "id": "log-1792402186700-125200",
+      "action": "UPDATE_TEAM_MEMBER",
+      "entity": "TEAM",
+      "entityId": "emp-1",
+      "timestamp": "2026-10-19T09:29:46.700Z",
+      "user": "admin",
+      "details": "Updated Manoj Neerajakshalu"
+    },
+    {
+      "id": "log-1792402114311-f16736",
+      "action": "UPDATE_TEAM_MEMBER",
+      "entity": "TEAM",
+      "entityId": "emp-1",
+      "timestamp": "2026-10-19T09:28:34.311Z",
+      "user": "admin",
+      "details": "Updated Manoj Neerajakshalu"
+    },
+    {
+      "id": "log-1792402091261-4fd996",
+      "action": "UPDATE_TEAM_MEMBER",
+      "entity": "TEAM",
+      "entityId": "emp-1",
+      "timestamp": "2026-10-19T09:28:11.261Z",
+      "user": "admin",
+      "details": "Updated Manoj Neerajakshalu"
+    },
+    {
+      "id": "log-1792402080684-66d761",
+      "action": "LOGIN",
+      "entity": "USER",
+      "entityId": "admin-super-1",
+      "timestamp": "2026-10-19T09:28:00.684Z",
+      "user": "admin",
+      "details": "Successful login from ::1"
+    },
+    {
+      "id": "log-initial",
+      "action": "SYSTEM_SEED",
+      "entity": "DATABASE",
+      "timestamp": "2026-10-19T09:21:33.642Z",
+      "user": "SYSTEM",
+      "details": "Initial database seeded successfully with existing website data."
+    }
+  ],
+  "inquiries": []
+}

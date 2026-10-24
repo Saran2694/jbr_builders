@@ -1,0 +1,14 @@
+{
+  "name": "jbr-builders-root",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "npm --prefix jbr-builders run dev",
+    "build": "npm --prefix jbr-builders run build",
+    "preview": "npm --prefix jbr-builders run preview",
+    "lint": "npm --prefix jbr-builders run lint"
+  },
+  "dependencies": {
+    "resend": "^6.34.1"
+  }
+}
