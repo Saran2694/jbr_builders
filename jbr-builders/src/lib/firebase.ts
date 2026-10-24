@@ -12,28 +12,24 @@ const firebaseConfig = {
 };
 
 export const isFirebaseConfigured = (): boolean => {
-  return Boolean(
-    import.meta.env.VITE_FIREBASE_API_KEY &&
-    import.meta.env.VITE_FIREBASE_PROJECT_ID &&
-    !import.meta.env.VITE_FIREBASE_API_KEY.includes('your_')
-  );
+  const key = import.meta.env.VITE_FIREBASE_API_KEY;
+  const project = import.meta.env.VITE_FIREBASE_PROJECT_ID;
+  return Boolean(key && project && key.trim() !== '' && !key.includes('your_'));
 };
 
-// Initialize Firebase safely
-let app: FirebaseApp;
-let auth: Auth;
-let db: Firestore;
+// Initialize Firebase safely only if valid credentials are provided
+let app: FirebaseApp = undefined as unknown as FirebaseApp;
+let auth: Auth = undefined as unknown as Auth;
+let db: Firestore = undefined as unknown as Firestore;
 
-try {
-  app = getApps().length ? getApp() : initializeApp(firebaseConfig);
-  auth = getAuth(app);
-  db = getFirestore(app);
-} catch (error) {
-  console.warn('Firebase initialization warning (will retry when valid credentials are set):', error);
-  // Create fallback minimal instances if needed during build
-  app = getApps().length ? getApp() : initializeApp({ projectId: 'jbr-builders-cms' });
-  auth = getAuth(app);
-  db = getFirestore(app);
+if (isFirebaseConfigured()) {
+  try {
+    app = getApps().length ? getApp() : initializeApp(firebaseConfig);
+    auth = getAuth(app);
+    db = getFirestore(app);
+  } catch (error) {
+    console.warn('Firebase initialization warning:', error);
+  }
 }
 
 export { app, auth, db };
