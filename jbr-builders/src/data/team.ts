@@ -37,7 +37,7 @@ export interface InternMember {
 export const EMPLOYEES: TeamMember[] = [
   {
     id: 'emp-1',
-    name: ' J Bharath',
+    name: 'J Bharath',
     role: 'Founder & Principal Architect',
     department: 'Executive Leadership & Engineering',
     qualification: 'B.Arch, B.E. Civil, Council of Architecture Reg.',
