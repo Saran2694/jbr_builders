@@ -680,7 +680,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenProjectImage, onOpen
                         <p className="text-[11px] font-extrabold uppercase tracking-wider text-[#123B68]">
                           Key On-Site Responsibilities:
                         </p>
-                        {emp.responsibilities.map((resp, i) => (
+                        {(emp.responsibilities || []).map((resp, i) => (
                           <div key={i} className="flex items-start gap-2 text-xs text-[#1E293B]">
                             <CheckCircle2 className="w-3.5 h-3.5 text-[#2468A6] mt-0.5 shrink-0" />
                             <span>{resp}</span>
@@ -862,7 +862,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenProjectImage, onOpen
                           <p className="text-[11px] font-extrabold uppercase tracking-wider text-[#123B68]">
                             Hands-On Practical Contributions:
                           </p>
-                          {intern.learningHighlights.map((hl, idx) => (
+                          {(intern.learningHighlights || []).map((hl, idx) => (
                             <div key={idx} className="flex items-start gap-2 text-xs text-[#64748B]">
                               <CheckCircle2 className="w-3.5 h-3.5 text-[#2468A6] mt-0.5 shrink-0" />
                               <span>{hl}</span>

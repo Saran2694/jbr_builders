@@ -84,6 +84,8 @@ function PublicShell() {
   );
 }
 
+import { ErrorBoundary } from './components/ErrorBoundary';
+
 /**
  * Public page components — they receive callback props via the outlet context
  * from PublicShell. We use wrapper components here so each route is clean.
@@ -94,24 +96,39 @@ type PublicShellContext = {
 };
 
 function HomeRoute() {
-  const { handleOpenQuote, handleOpenLightbox } = useOutletContext<PublicShellContext>();
-  return <HomePage onOpenQuote={handleOpenQuote} onOpenProjectImage={handleOpenLightbox} />;
+  const ctx = useOutletContext<PublicShellContext>() || {};
+  return (
+    <HomePage
+      onOpenQuote={ctx.handleOpenQuote || (() => {})}
+      onOpenProjectImage={ctx.handleOpenLightbox || (() => {})}
+    />
+  );
 }
 function AboutRoute() {
-  const { handleOpenQuote, handleOpenLightbox } = useOutletContext<PublicShellContext>();
-  return <AboutPage onOpenQuote={() => handleOpenQuote()} onOpenProjectImage={handleOpenLightbox} />;
+  const ctx = useOutletContext<PublicShellContext>() || {};
+  return (
+    <AboutPage
+      onOpenQuote={() => ctx.handleOpenQuote?.()}
+      onOpenProjectImage={ctx.handleOpenLightbox || (() => {})}
+    />
+  );
 }
 function ServicesRoute() {
-  const { handleOpenQuote } = useOutletContext<PublicShellContext>();
-  return <ServicesPage onSelectService={(s) => handleOpenQuote(s)} />;
+  const ctx = useOutletContext<PublicShellContext>() || {};
+  return <ServicesPage onSelectService={(s) => ctx.handleOpenQuote?.(s)} />;
 }
 function ProjectsRoute() {
-  const { handleOpenQuote, handleOpenLightbox } = useOutletContext<PublicShellContext>();
-  return <ProjectsPage onOpenLightbox={handleOpenLightbox} onOpenQuote={() => handleOpenQuote()} />;
+  const ctx = useOutletContext<PublicShellContext>() || {};
+  return (
+    <ProjectsPage
+      onOpenLightbox={ctx.handleOpenLightbox || (() => {})}
+      onOpenQuote={() => ctx.handleOpenQuote?.()}
+    />
+  );
 }
 function GalleryRoute() {
-  const { handleOpenLightbox } = useOutletContext<PublicShellContext>();
-  return <GalleryPage onOpenLightbox={handleOpenLightbox} />;
+  const ctx = useOutletContext<PublicShellContext>() || {};
+  return <GalleryPage onOpenLightbox={ctx.handleOpenLightbox || (() => {})} />;
 }
 function ContactRoute() {
   return <ContactPage />;
@@ -122,47 +139,47 @@ function CareerRoute() {
 
 export function App() {
   return (
-    <CMSProvider>
-      <BrowserRouter>
-        <ScrollToTop />
-        <AdminAuthProvider>
-          <Routes>
-            {/* ========== ADMIN CMS ROUTES ========== */}
-            {/* Admin Login (standalone, no layout) */}
-            <Route path="/admin/login" element={<AdminLoginPage />} />
+    <ErrorBoundary>
+      <CMSProvider>
+        <BrowserRouter>
+          <ScrollToTop />
+          <AdminAuthProvider>
+            <Routes>
+              {/* ========== ADMIN CMS ROUTES ========== */}
+              {/* Admin Login (standalone, no layout) */}
+              <Route path="/admin/login" element={<AdminLoginPage />} />
 
-            {/* /admin → redirect to /admin/dashboard */}
-            <Route path="/admin" element={<Navigate to="/admin/dashboard" replace />} />
+              {/* Protected Admin Layout with all nested admin pages */}
+              <Route path="/admin" element={<AdminLayout />}>
+                <Route index element={<Navigate to="dashboard" replace />} />
+                <Route path="dashboard" element={<AdminDashboard />} />
+                <Route path="team" element={<AdminTeamPage />} />
+                <Route path="services" element={<AdminServicesPage />} />
+                <Route path="projects" element={<AdminProjectsPage />} />
+                <Route path="gallery" element={<AdminGalleryPage />} />
+                <Route path="homepage" element={<AdminHomePage />} />
+                <Route path="internships" element={<AdminInternshipPage />} />
+                <Route path="company" element={<AdminCompanyPage />} />
+                <Route path="security" element={<AdminSecurityPage />} />
+              </Route>
 
-            {/* Protected Admin Layout with all nested admin pages */}
-            <Route path="/admin" element={<AdminLayout />}>
-              <Route path="dashboard" element={<AdminDashboard />} />
-              <Route path="team" element={<AdminTeamPage />} />
-              <Route path="services" element={<AdminServicesPage />} />
-              <Route path="projects" element={<AdminProjectsPage />} />
-              <Route path="gallery" element={<AdminGalleryPage />} />
-              <Route path="homepage" element={<AdminHomePage />} />
-              <Route path="internships" element={<AdminInternshipPage />} />
-              <Route path="company" element={<AdminCompanyPage />} />
-              <Route path="security" element={<AdminSecurityPage />} />
-            </Route>
-
-            {/* ========== PUBLIC WEBSITE ROUTES ========== */}
-            {/* PublicShell renders Navbar + Footer + modals; child routes render in <Outlet> */}
-            <Route element={<PublicShell />}>
-              <Route path="/" element={<HomeRoute />} />
-              <Route path="/about" element={<AboutRoute />} />
-              <Route path="/services" element={<ServicesRoute />} />
-              <Route path="/projects" element={<ProjectsRoute />} />
-              <Route path="/gallery" element={<GalleryRoute />} />
-              <Route path="/careers" element={<CareerRoute />} />
-              <Route path="/career" element={<Navigate to="/careers" replace />} />
-              <Route path="/contact" element={<ContactRoute />} />
-            </Route>
-          </Routes>
-        </AdminAuthProvider>
-      </BrowserRouter>
-    </CMSProvider>
+              {/* ========== PUBLIC WEBSITE ROUTES ========== */}
+              {/* PublicShell renders Navbar + Footer + modals; child routes render in <Outlet> */}
+              <Route element={<PublicShell />}>
+                <Route path="/" element={<HomeRoute />} />
+                <Route path="/about" element={<AboutRoute />} />
+                <Route path="/services" element={<ServicesRoute />} />
+                <Route path="/projects" element={<ProjectsRoute />} />
+                <Route path="/gallery" element={<GalleryRoute />} />
+                <Route path="/careers" element={<CareerRoute />} />
+                <Route path="/career" element={<Navigate to="/careers" replace />} />
+                <Route path="/contact" element={<ContactRoute />} />
+              </Route>
+            </Routes>
+          </AdminAuthProvider>
+        </BrowserRouter>
+      </CMSProvider>
+    </ErrorBoundary>
   );
 }
 

@@ -38,12 +38,18 @@ export const TeamSpotlight: React.FC<TeamSpotlightProps> = ({
   const activeMember = publishedTeam[activeIdx] || publishedTeam[0];
 
   const handlePrev = () => {
+    if (publishedTeam.length === 0) return;
     setActiveIdx((prev) => (prev - 1 + publishedTeam.length) % publishedTeam.length);
   };
 
   const handleNext = () => {
+    if (publishedTeam.length === 0) return;
     setActiveIdx((prev) => (prev + 1) % publishedTeam.length);
   };
+
+  if (!publishedTeam || publishedTeam.length === 0 || !activeMember) {
+    return null;
+  }
 
   return (
     <section

@@ -44,10 +44,12 @@ export const FeaturedProjects: React.FC<FeaturedProjectsProps> = ({ onOpenLightb
 
   // Navigation handlers
   const handlePrev = useCallback(() => {
+    if (total === 0) return;
     setActiveIndex((prev) => (prev - 1 + total) % total);
   }, [total]);
 
   const handleNext = useCallback(() => {
+    if (total === 0) return;
     setActiveIndex((prev) => (prev + 1) % total);
   }, [total]);
 
@@ -112,6 +114,10 @@ export const FeaturedProjects: React.FC<FeaturedProjectsProps> = ({ onOpenLightb
     if (diff < -total / 2) diff += total;
     return diff;
   };
+
+  if (total === 0 || !activeProject) {
+    return null;
+  }
 
   return (
     <section
