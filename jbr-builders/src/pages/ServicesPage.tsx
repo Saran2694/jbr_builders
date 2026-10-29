@@ -26,6 +26,9 @@ import { PROPOSED_SERVICES } from '../data/services';
 import { COMPANY_INFO } from '../data/company';
 import { useCMS } from '../context/CMSContext';
 import { Link } from 'react-router-dom';
+import { SEOHead } from '../components/SEOHead';
+import { StructuredData } from '../components/StructuredData';
+import { getBreadcrumbSchema } from '../seo/structured-data';
 
 interface ServicesPageProps {
   onSelectService: (serviceName: string) => void;

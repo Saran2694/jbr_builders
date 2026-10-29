@@ -31,6 +31,9 @@ import { GALLERY_PROJECTS } from '../data/projects';
 import { Link } from 'react-router-dom';
 import { TeamSpotlight } from '../components/TeamSpotlight';
 import { useCMS } from '../context/CMSContext';
+import { SEOHead } from '../components/SEOHead';
+import { StructuredData } from '../components/StructuredData';
+import { getBreadcrumbSchema } from '../seo/structured-data';
 
 const LinkedInIcon = ({ className = 'w-3.5 h-3.5' }: { className?: string }) => (
   <svg className={className} fill="currentColor" viewBox="0 0 24 24">
@@ -88,6 +91,17 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenProjectImage, onOpen
 
   return (
     <div className="pt-24 sm:pt-28 pb-20 relative overflow-hidden blueprint-grid">
+      {/* SEO Meta Tags */}
+      <SEOHead
+        title="About JBR Builders | Construction Company in Tamil Nadu"
+        description="Learn about JBR Builders — a construction company with offices in Tuticorin and Tirunelveli, Tamil Nadu. Meet our licensed civil engineers, architects, and site supervisors who deliver quality residential and commercial projects."
+        canonical="https://jbrbuilders.in/about"
+        keywords="about JBR Builders, construction company Tamil Nadu, civil engineers Tirunelveli, architects Tuticorin, building contractors team"
+      />
+      <StructuredData data={getBreadcrumbSchema([
+        { name: 'Home', url: 'https://jbrbuilders.in/' },
+        { name: 'About Us', url: 'https://jbrbuilders.in/about' },
+      ])} />
       {/* Ambient background glows */}
       <div className="absolute top-20 -left-40 w-96 h-96 bg-[#2468A6]/12 rounded-full blur-[140px] pointer-events-none" />
       <div className="absolute top-1/2 -right-40 w-[500px] h-[500px] bg-[#123B68]/12 rounded-full blur-[140px] pointer-events-none" />

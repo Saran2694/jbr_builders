@@ -6,6 +6,9 @@ import { WhyChooseUs } from '../components/WhyChooseUs';
 import { FeaturedProjects } from '../components/FeaturedProjects';
 import { TeamSpotlight } from '../components/TeamSpotlight';
 import { HomeVisitingCard } from '../components/HomeVisitingCard';
+import { SEOHead } from '../components/SEOHead';
+import { StructuredData } from '../components/StructuredData';
+import { getLocalBusinessSchema, getBreadcrumbSchema } from '../seo/structured-data';
 
 interface HomePageProps {
   onOpenQuote: (serviceName?: string) => void;
@@ -15,6 +18,17 @@ interface HomePageProps {
 export const HomePage: React.FC<HomePageProps> = ({ onOpenQuote, onOpenProjectImage }) => {
   return (
     <div className="relative">
+      {/* SEO Meta Tags */}
+      <SEOHead
+        title="JBR Builders | Home Construction in Tirunelveli & Tuticorin"
+        description="JBR Builders — trusted construction company in Tirunelveli & Tuticorin (Thoothukudi), Tamil Nadu. Residential construction, commercial building, turnkey solutions, and architectural planning with licensed civil engineers."
+        canonical="https://jbrbuilders.in/"
+        keywords="JBR Builders, builders in Tirunelveli, builders in Tuticorin, construction companies in Tirunelveli, house construction Tirunelveli, building contractors Thoothukudi, residential construction Tamil Nadu, turnkey construction South India"
+      />
+      <StructuredData data={getLocalBusinessSchema()} />
+      <StructuredData data={getBreadcrumbSchema([
+        { name: 'Home', url: 'https://jbrbuilders.in/' },
+      ])} />
       {/* SECTION 2 — Architectural Video Hero */}
       <Hero
         onOpenQuote={() => onOpenQuote()}

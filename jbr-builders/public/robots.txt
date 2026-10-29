@@ -1,0 +1,16 @@
+# JBR Builders - Robots.txt
+# https://jbrbuilders.in
+
+User-agent: *
+Allow: /
+
+# Block admin/CMS routes
+Disallow: /admin/
+Disallow: /admin
+
+# Block API routes
+Disallow: /api/
+
+# Sitemap
+Sitemap: https://jbrbuilders.in/sitemap.xml
+
